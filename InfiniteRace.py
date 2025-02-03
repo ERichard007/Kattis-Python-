@@ -1,3 +1,4 @@
+#FAILED NEOOOOOOOWWWWW
 racers = int(input()) #racers
 num_of_events = int(input()) #number of events
 
