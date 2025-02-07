@@ -6,14 +6,21 @@ for x in range(rows):
     grid.append(input())
 
 transposeGrid = list(map(list, zip(*grid)))
-combos = set()
+sets = [set(sublist) for sublist in transposeGrid]
 
-for x in range(1, len(transposeGrid)):
-    combos.add([transposeGrid[x]])
+combos = []
+
+for s in sets:
+    matched = False
+    for c in combos:
+        if s & c:
+            c.update(s)
+            matched = True
+            break
+    if not matched:
+        combos.append(s)
 
 
+print(len(combos))
 
-print(grid)
-print(transposeGrid)
-print(combos)
-
+#honestly some powerful stuff sets can do, fun to use
