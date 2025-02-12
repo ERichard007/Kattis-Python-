@@ -7,6 +7,7 @@ friendList = defaultdict(set)
 
 for i in range(totalFriendPairs):
     friend1, friend2 = map(int, input().split())
+
     friendList[friend1].add(friend2)
     friendList[friend2].add(friend1)
 
