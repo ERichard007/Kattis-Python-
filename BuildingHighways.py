@@ -1,14 +1,21 @@
-numOfCities = int(input())
-cityCrime = [int(x) for x in input().split()]
-highways = [2000001]*(numOfCities-1)
+from heapq import heappush, heappop
 
-for city in range(numOfCities):
-    for crime in range(city+1, numOfCities):
-        crimeRate = cityCrime[city] + cityCrime[crime]
-        print(crimeRate)
-        if (crimeRate < highways[crime-1]):
-            highways[crime-1] = crimeRate
-            print(highways)
-            
+numCities = int(input())
+cityCrime = list(map(int, input().split()))
 
-print(sum(highways))
+cityAndCrime = []
+Visited = [False]*numCities
+cost = 0
+
+if numCities == 1:
+    print(cost)
+else:
+    heappush(cityAndCrime, (0,0))
+    
+    while cityAndCrime:
+    
+        city, crime = heappop(cityAndCrime)
+
+
+
+
