@@ -1,18 +1,14 @@
-from collections import defaultdict
-
 numOfCities = int(input())
 cityCrime = [int(x) for x in input().split()]
+highways = [2000001]*(numOfCities-1)
 
-cityHighways = defaultdict(int)
+for city in range(numOfCities):
+    for crime in range(city+1, numOfCities):
+        crimeRate = cityCrime[city] + cityCrime[crime]
+        print(crimeRate)
+        if (crimeRate < highways[crime-1]):
+            highways[crime-1] = crimeRate
+            print(highways)
+            
 
-city = -1
-while True:
-    city += 1
-    if city >= numOfCities: break 
-    cityCost = cityCrime[city]
-    for x in range(1+city, numOfCities):
-        highwayCost = cityCost + cityCrime[x] 
-        if (highwayCost < cityHighways[x+1] or cityHighways[x+1] == 0):
-            cityHighways[x+1] = highwayCost
-
-print(sum(cityHighways.values()))
+print(sum(highways))
