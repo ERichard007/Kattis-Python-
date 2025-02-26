@@ -1,18 +1,9 @@
 numChores = int(input())
-setOfChores = set()
+
+choreList = []
+seen = set()
+seenAdd = seen.add
 
 for x in range(numChores):
-    print("\n")
     newChore = str(input())
-    setOfChores.add(newChore)
-
-    print("\nCurrent:")
-    for chore in setOfChores:
-        print(chore)
-
-print("\n\n\nOUTPUT:")
-
-reverseChores = list(setOfChores)
-reverseChores.
-for chore in reverseChores:
-    print(chore)
+    if not (newChore in seen or seenAdd(newChore)): print(newChore)
