@@ -1,3 +1,5 @@
+#FAIL LOOOOOSERRRRR AAAAAAAHAAAAAAAAHAAAAA
+
 availableComponents, typesOfComponents, moneyAvailable = list(map(int, input().split()))
 a = input().split()
 componentNames = {a[x] : [] for x in range(typesOfComponents)}
